@@ -1,7 +1,13 @@
+import Header from './components/header/header';
+import './styles/global.css';
+
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang='ko'>
-      <body>{children}</body>
+      <body>
+        <Header />
+        {children}
+      </body>
     </html>
   );
 }

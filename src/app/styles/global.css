@@ -34,6 +34,17 @@ main {
   align-items: center;
 }
 
+.mr10 {
+  margin-right: 10px;
+}
+
+.noDrag {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
 .underlineInputWrap {
   display: flex;
   justify-content: space-between;

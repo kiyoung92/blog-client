@@ -11,6 +11,14 @@
   gap: 20px;
 }
 
+.logoWrap {
+  transition: var(--transition);
+}
+
+.logoWrap:hover {
+  color: var(--hover-color);
+}
+
 .logo {
   font-weight: var(--text-bold);
   font-size: 30px;

@@ -4,9 +4,9 @@ import Link from 'next/link';
 export default function Header() {
   return (
     <header className={styles.wrap}>
-      <div>
+      <Link className={styles.logoWrap} href={'/'}>
         <p className={styles.logo}>CAT( )</p>
-      </div>
+      </Link>
       <div></div>
       <div className={styles.signWrap}>
         <Link className={styles.signButton} href={'/sign-up'}>

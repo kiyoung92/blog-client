@@ -6,7 +6,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html lang='ko'>
       <body>
         <Header />
-        {children}
+        <main className='wrap'>{children}</main>
       </body>
     </html>
   );

@@ -1,0 +1,28 @@
+.wrap {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 80px;
+}
+
+.signWrap {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.logo {
+  font-weight: var(--text-bold);
+  font-size: 30px;
+}
+
+.signButton {
+  font-size: 16px;
+  font-weight: var(--text-bold);
+  cursor: var(--cursor);
+  transition: var(--transition);
+}
+
+.signButton:hover {
+  color: var(--hover-color);
+}

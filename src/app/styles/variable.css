@@ -1,0 +1,8 @@
+:root {
+  --main-padding: 0px 20px;
+  --header-padding: 0px 20px;
+  --footer-padding: 0px 20px;
+  --text-bold: bold;
+  --cursor: pointer;
+  --transition: 0.3s all ease;
+}

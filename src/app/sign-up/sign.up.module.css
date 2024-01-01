@@ -37,3 +37,21 @@
   font-size: var(--small-text);
   text-align: center;
 }
+
+.checkButton {
+  background-color: var(--background-color);
+  border: none;
+  color: var(--hover-color);
+  font-weight: bold;
+  height: 40px;
+  border-radius: 10px;
+}
+
+.checkButton:disabled {
+  background-color: var(--background-color);
+  border: none;
+  color: var(--disabled-color);
+  font-weight: bold;
+  height: 40px;
+  border-radius: 10px;
+}

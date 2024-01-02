@@ -7,7 +7,6 @@ export default function Header() {
       <Link className={styles.logoWrap} href={'/'}>
         <p className={styles.logo}>CAT( )</p>
       </Link>
-      <div></div>
       <div className={styles.signWrap}>
         <Link className={styles.signButton} href={'/sign-up'}>
           <p>Sign Up</p>

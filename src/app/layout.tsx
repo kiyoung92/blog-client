@@ -1,12 +1,16 @@
 import Header from './components/header/header';
 import './styles/global.css';
 
-export default function RootLayout({ children }: { children: React.ReactNode }) {
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
   return (
-    <html lang='ko'>
+    <html lang="ko">
       <body>
         <Header />
-        <main className='wrap'>{children}</main>
+        <main className="wrap">{children}</main>
       </body>
     </html>
   );

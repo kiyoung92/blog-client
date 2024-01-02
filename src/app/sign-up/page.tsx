@@ -83,8 +83,6 @@ export default function SignUp() {
     fetchToken();
   }, []);
 
-  useEffect(() => {});
-
   return (
     <div className={`${styles.contentWrap} noDrag`}>
       <h1 className={styles.title}>SIGN UP</h1>

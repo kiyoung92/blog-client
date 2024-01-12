@@ -18,6 +18,17 @@ export default function SignIn() {
     );
   };
 
+  // const tokenHandler = async () => {
+  //   const response = await axios.get(
+  //     'http://localhost:3000/auth/profile',
+  //     {},
+  //     {
+  //       withCredentials: true,
+  //     },
+  //   );
+  //   console.log(response);
+  // };
+
   const emailHandler = (e) => {
     setEmail(e.target.value);
   };
@@ -54,6 +65,9 @@ export default function SignIn() {
         <button className={styles.signInButton} onClick={signInHandler}>
           로그인
         </button>
+        {/* <button className={styles.signInButton} onClick={tokenHandler}>
+          토큰 테스트
+        </button> */}
         <Link className={styles.smallText} href={'/sign-up'}>
           아직 회원이 아니신가요?
         </Link>

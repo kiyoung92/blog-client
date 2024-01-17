@@ -3,4 +3,9 @@
   --color: #ccc;
   --title-color: #fff;
   --hover-color: #e0234e;
+  --github-logo: url('/images/social-login/github-mark-white.svg');
+  --google-logo: url('/images/social-login/google-mark.svg');
+  --kakao-logo: url('/images/social-login/kakao-mark.svg');
+  --naver-logo: url('/images/social-login/naver-mark.svg');
+  --apple-logo: url('/images/social-login/apple-mark-white.svg');
 }

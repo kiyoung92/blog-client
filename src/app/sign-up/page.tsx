@@ -4,9 +4,9 @@ import {
   Dispatch,
   SetStateAction,
   useCallback,
-  useEffect,
   useState,
 } from 'react';
+import SocialLogin from '../components/social-login/social-login';
 import styles from './sign.up.module.css';
 import Link from 'next/link';
 import axios from 'axios';
@@ -51,10 +51,7 @@ export default function SignUp() {
     [email, password, name, authToken],
   );
 
-  const emailHandler = debounceInput(
-    setEmail,
-    process.env.NEXT_PUBLIC_SIGNUP_EMAIL_URL,
-  );
+  const emailHandler = debounceInput(setEmail, `/user/isAlreadyEmail`);
   const nameHandler = debounceInput(
     setName,
     process.env.NEXT_PUBLIC_SIGNUP_NAME_URL,
@@ -89,18 +86,18 @@ export default function SignUp() {
     });
   };
 
-  useEffect(() => {
-    const fetchToken = async () => {
-      if (process.env.NEXT_PUBLIC_AUTH_TOKEN_SERVER_URL) {
-        const response = await axios.post(
-          process.env.NEXT_PUBLIC_AUTH_TOKEN_SERVER_URL,
-        );
-        setAuthToken(response.data.data.token);
-      }
-    };
+  // useEffect(() => {
+  //   const fetchToken = async () => {
+  //     if (process.env.NEXT_PUBLIC_AUTH_TOKEN_SERVER_URL) {
+  //       const response = await axios.post(
+  //         process.env.NEXT_PUBLIC_AUTH_TOKEN_SERVER_URL,
+  //       );
+  //       setAuthToken(response.data.data.token);
+  //     }
+  //   };
 
-    fetchToken();
-  }, []);
+  //   fetchToken();
+  // }, []);
 
   return (
     <div className={`${styles.contentWrap} noDrag`}>
@@ -172,6 +169,13 @@ export default function SignUp() {
           ) : null}
         </div>
       ) : null}
+      {/* <Image
+        src="/images/social-login/github-mark-white.svg"
+        width={300}
+        height={300}
+        alt="Github Logo"
+      /> */}
+
       <div className={styles.buttonWrap}>
         <button
           className={`${styles.signUpButton} ${
@@ -187,6 +191,7 @@ export default function SignUp() {
         <Link className={styles.smallText} href={'/sign-in'}>
           이미 회원이신가요?
         </Link>
+        <SocialLogin />
       </div>
     </div>
   );

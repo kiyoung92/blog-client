@@ -3,6 +3,7 @@ import axios from 'axios';
 import styles from './sign.in.module.css';
 import Link from 'next/link';
 import { useState } from 'react';
+import SocialLogin from '../components/social-login/social-login';
 
 export default function SignIn() {
   const [email, setEmail] = useState('');
@@ -19,12 +20,15 @@ export default function SignIn() {
   };
 
   const githubLoginHadler = async () => {
-    const response = await axios.get(
-      `${process.env.NEXT_PUBLIC_SERVER_URL}/auth/github`,
-      {
-        withCredentials: 'include',
-      },
-    );
+    location.assign(process.env.NEXT_PUBLIC_GITHUB_LOGIN_URL);
+  };
+
+  const googleLoginHandler = async () => {
+    location.assign(process.env.NEXT_PUBLIC_GOOGLE_LOGIN_URL);
+  };
+
+  const kakaoLoginHandler = async () => {
+    location.assign(process.env.NEXT_PUBLIC_KAKAO_LOGIN_URL);
   };
 
   const emailHandler = (e) => {
@@ -63,12 +67,10 @@ export default function SignIn() {
         <button className={styles.signInButton} onClick={signInHandler}>
           로그인
         </button>
-        <button className={styles.signInButton} onClick={githubLoginHadler}>
-          GITHUB LOGIN
-        </button>
         <Link className={styles.smallText} href={'/sign-up'}>
           아직 회원이 아니신가요?
         </Link>
+        <SocialLogin />
       </div>
     </div>
   );

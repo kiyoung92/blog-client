@@ -1,0 +1,60 @@
+.socialLoginWrap {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  padding: 40px 0px;
+}
+
+.socialLoginWrap > button {
+  cursor: pointer;
+}
+
+.githubLogo {
+  background-image: var(--github-logo);
+  width: 40px;
+  height: 40px;
+  background-repeat: no-repeat;
+  background-size: 40px;
+  background-color: transparent;
+  border: none;
+}
+
+.googleLogo {
+  background-image: var(--google-logo);
+  width: 40px;
+  height: 40px;
+  background-repeat: no-repeat;
+  background-size: 40px;
+  background-color: transparent;
+  border: none;
+}
+
+.kakaoLogo {
+  background-image: var(--kakao-logo);
+  width: 40px;
+  height: 40px;
+  background-repeat: no-repeat;
+  background-size: 40px;
+  background-color: transparent;
+  border: none;
+}
+
+.naverLogo {
+  background-image: var(--naver-logo);
+  width: 40px;
+  height: 40px;
+  background-repeat: no-repeat;
+  background-size: 40px;
+  background-color: transparent;
+  border: none;
+}
+
+.appleLogo {
+  background-image: var(--apple-logo);
+  width: 40px;
+  height: 40px;
+  background-repeat: no-repeat;
+  background-size: 40px;
+  background-color: transparent;
+  border: none;
+}

@@ -1,9 +1,12 @@
-FROM node:18.17.0-alpine AS production
-
+FROM node:18.17.0-alpine as build
 WORKDIR /app
+COPY package*.json ./
+RUN npm install
+COPY . .
+RUN npm run build
 
-# COPY --from=builder /usr/src/app/node_modules ./node_modules
-# COPY --from=builder /usr/src/app/dist ./dist
-# COPY --from=builder /usr/src/app/prisma ./prisma
-
-CMD ["pnpm", "start", "-p", "3000"]
+FROM node:18.17.0
+WORKDIR /app
+COPY --from=build /app ./
+EXPOSE 3080
+CMD ["npm", "start"]

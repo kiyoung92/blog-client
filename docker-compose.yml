@@ -9,15 +9,4 @@ services:
     ports:
       - ${CLIENT_PORT}
     volumes:
-      - ${SERVER_VOLUME_ROOT}
-    extra_hosts:
-      - host.docker.internal:host-gateway
-    networks:
-      server-net:
-        ipv4_address: ${SERVER_IP}
-networks:
-  server-net:
-    name: ${NETWORK_NAME}
-    ipam:
-      config:
-        - subnet: ${SUBNET_IP}
+      - ${CLIENT_VOLUME_ROOT}

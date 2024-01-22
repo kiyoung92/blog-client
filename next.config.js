@@ -5,7 +5,7 @@ const nextConfig = {
     return [
       {
         source: '/:path*',
-        destination: `${process.env.DEV_CLIENT_SERVER_URL}/:path*`,
+        destination: `${process.env.SERVER_PORT}/:path*`,
       },
     ];
   },

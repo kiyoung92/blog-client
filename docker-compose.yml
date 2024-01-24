@@ -6,6 +6,11 @@ services:
       dockerfile: Dockerfile
     container_name: ${CLIENT_NAME}
     restart: always
+    extra_hosts:
+      - host.docker.internal:host-gateway
+    networks:
+      server-net:
+        ipv4_address: ${CLIENT_IP}
   nginx:
     build:
       context: .
@@ -15,3 +20,14 @@ services:
       - ${NGINX_PORT}
     depends_on:
       - server
+    extra_hosts:
+      - host.docker.internal:host-gateway
+    networks:
+      server-net:
+        ipv4_address: ${CLIENT_NGINX_IP}
+networks:
+  client-net:
+    name: ${CLIENT_NETWORK_NAME}
+    ipam:
+      config:
+        - subnet: ${CLIENT_SUBNET_IP}

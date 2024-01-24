@@ -20,15 +20,15 @@ export default function SignIn() {
   };
 
   const githubLoginHadler = async () => {
-    location.assign(`/auth/github`);
+    location.assign(`${process.env.REQUEST_URL}/auth/github`);
   };
 
   const googleLoginHandler = async () => {
-    location.assign(`/auth/google`);
+    location.assign(`${process.env.REQUEST_URL}/auth/google`);
   };
 
   const kakaoLoginHandler = async () => {
-    location.assign(`/auth/kakao`);
+    location.assign(`${process.env.REQUEST_URL}/auth/kakao`);
   };
 
   const emailHandler = (e) => {

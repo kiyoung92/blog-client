@@ -10,7 +10,7 @@ export default function SignIn() {
   const [password, setPassword] = useState('');
   const signInHandler = async () => {
     const response = await axios.post(
-      process.env.NEXT_PUBLIC_LOGIN_URL,
+      `/auth/signIn`,
       {
         email,
         password,
@@ -20,15 +20,15 @@ export default function SignIn() {
   };
 
   const githubLoginHadler = async () => {
-    location.assign(process.env.NEXT_PUBLIC_GITHUB_LOGIN_URL);
+    location.assign(`/auth/github`);
   };
 
   const googleLoginHandler = async () => {
-    location.assign(process.env.NEXT_PUBLIC_GOOGLE_LOGIN_URL);
+    location.assign(`/auth/google`);
   };
 
   const kakaoLoginHandler = async () => {
-    location.assign(process.env.NEXT_PUBLIC_KAKAO_LOGIN_URL);
+    location.assign(`/auth/kakao`);
   };
 
   const emailHandler = (e) => {

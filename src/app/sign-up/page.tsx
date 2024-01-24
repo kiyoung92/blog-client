@@ -52,14 +52,8 @@ export default function SignUp() {
   );
 
   const emailHandler = debounceInput(setEmail, `/user/isAlreadyEmail`);
-  const nameHandler = debounceInput(
-    setName,
-    process.env.NEXT_PUBLIC_SIGNUP_NAME_URL,
-  );
-  const passwordHandler = debounceInput(
-    setPassword,
-    process.env.NEXT_PUBLIC_SIGNUP_PASSWORD_URL,
-  );
+  const nameHandler = debounceInput(setName, `/user/checkName`);
+  const passwordHandler = debounceInput(setPassword, `/user/checkPassword`);
 
   const setInputState = (stateKey: string, bool: boolean) => {
     if (stateKey === 'email') setCheckEmail(bool);
@@ -169,13 +163,6 @@ export default function SignUp() {
           ) : null}
         </div>
       ) : null}
-      {/* <Image
-        src="/images/social-login/github-mark-white.svg"
-        width={300}
-        height={300}
-        alt="Github Logo"
-      /> */}
-
       <div className={styles.buttonWrap}>
         <button
           className={`${styles.signUpButton} ${

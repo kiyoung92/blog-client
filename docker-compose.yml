@@ -6,6 +6,8 @@ services:
       dockerfile: Dockerfile
     container_name: ${CLIENT_NAME}
     restart: always
+    environment:
+      REQUEST_URL: ${REQUEST_URL}
     extra_hosts:
       - host.docker.internal:host-gateway
     networks:
@@ -20,8 +22,6 @@ services:
       - ${NGINX_PORT}
     depends_on:
       - server
-    volumes:
-      - ${NGINX_VOLUME}
     extra_hosts:
       - host.docker.internal:host-gateway
     networks:

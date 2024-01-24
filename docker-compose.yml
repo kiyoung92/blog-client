@@ -20,6 +20,8 @@ services:
       - ${NGINX_PORT}
     depends_on:
       - server
+    volumes:
+      - ${NGINX_VOLUME}
     extra_hosts:
       - host.docker.internal:host-gateway
     networks:

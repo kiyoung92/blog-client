@@ -10,7 +10,7 @@ export default function SignIn() {
   const [password, setPassword] = useState('');
   const signInHandler = async () => {
     const response = await axios.post(
-      `/auth/signIn`,
+      `${process.env.REQUEST_URL}/auth/signIn`,
       {
         email,
         password,

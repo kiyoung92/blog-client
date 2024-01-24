@@ -51,9 +51,18 @@ export default function SignUp() {
     [email, password, name, authToken],
   );
 
-  const emailHandler = debounceInput(setEmail, `/user/isAlreadyEmail`);
-  const nameHandler = debounceInput(setName, `/user/checkName`);
-  const passwordHandler = debounceInput(setPassword, `/user/checkPassword`);
+  const emailHandler = debounceInput(
+    setEmail,
+    `${process.env.REQUEST_URL}/user/isAlreadyEmail`,
+  );
+  const nameHandler = debounceInput(
+    setName,
+    `${process.env.REQUEST_URL}/user/checkName`,
+  );
+  const passwordHandler = debounceInput(
+    setPassword,
+    `${process.env.REQUEST_URL}/user/checkPassword`,
+  );
 
   const setInputState = (stateKey: string, bool: boolean) => {
     if (stateKey === 'email') setCheckEmail(bool);

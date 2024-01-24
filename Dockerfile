@@ -9,8 +9,4 @@ RUN pnpm install
 COPY . .
 RUN pnpm build
 
-# # COPY --from=builder /usr/src/app/node_modules ./node_modules
-# # COPY --from=builder /usr/src/app/dist ./dist
-# # COPY --from=builder /usr/src/app/prisma ./prisma
-
 CMD ["pnpm", "start", "-p", "3080"]

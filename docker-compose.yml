@@ -6,7 +6,12 @@ services:
       dockerfile: Dockerfile
     container_name: ${CLIENT_NAME}
     restart: always
+  nginx:
+    build:
+      context: .
+      dockerfile: Dockerfile.nginx
+    container_name: ${NGINX_NAME}
     ports:
-      - ${CLIENT_PORT}
-    volumes:
-      - ${CLIENT_VOLUME_ROOT}
+      - ${NGINX_PORT}
+    depends_on:
+      - server

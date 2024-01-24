@@ -53,15 +53,15 @@ export default function SignUp() {
 
   const emailHandler = debounceInput(
     setEmail,
-    `${process.env.REQUEST_URL}/user/isAlreadyEmail`,
+    `${process.env.NEXT_PUBLIC_REQUEST_URL}/user/isAlreadyEmail`,
   );
   const nameHandler = debounceInput(
     setName,
-    `${process.env.REQUEST_URL}/user/checkName`,
+    `${process.env.NEXT_PUBLIC_REQUEST_URL}/user/checkName`,
   );
   const passwordHandler = debounceInput(
     setPassword,
-    `${process.env.REQUEST_URL}/user/checkPassword`,
+    `${process.env.NEXT_PUBLIC_REQUEST_URL}/user/checkPassword`,
   );
 
   const setInputState = (stateKey: string, bool: boolean) => {

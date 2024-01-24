@@ -26,7 +26,7 @@ services:
       server-net:
         ipv4_address: ${CLIENT_NGINX_IP}
 networks:
-  client-net:
+  server-net:
     name: ${CLIENT_NETWORK_NAME}
     ipam:
       config:

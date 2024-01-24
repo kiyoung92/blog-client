@@ -41,3 +41,6 @@ next-env.d.ts
 
 # nginx
 nginx.conf
+
+#
+next.config.js

@@ -15,7 +15,7 @@ export default function SignIn() {
         email,
         password,
       },
-      { withCredentials: 'include' },
+      { withCredentials: true },
     );
   };
 
